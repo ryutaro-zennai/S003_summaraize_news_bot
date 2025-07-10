@@ -36,7 +36,7 @@ def main():
         logging.error("RSSフィードの解析に失敗しました。")
         return
     
-    formatted_texts = [f"記事タイトル: {item.title}\n概要: {item.summary}\n" for item in feed.entries[:5]]
+    formatted_texts = [f"記事タイトル: {item.title}\n概要: {item.summary}\n参考記事: {item.link}\n" for item in feed.entries[:5]]
     news_text_data = "\n---\n".join(formatted_texts)
 
     if not news_text_data:
@@ -77,13 +77,14 @@ def main():
     2.  **核心の速攻解説**: ニュースのポイントを、専門用語を避けて自分の言葉で解説する。「要するに、〇〇ができるようになったって話で…」
     3.  **キャリアへの接続**: 「エンジニア社長として思うのは…」「これって僕らビジネスパーソンにとっては…」と続け、キャリアアップやスキルセットへの具体的な影響を示す。
     4.  **自然な行動喚起 (CTA)**: 「こういう話、もっと深くしたい人はLINEで待ってます！」「本気で次のキャリア考えるなら、うちのサービス[ここにあなたのサービス名]も覗いてみてください」と、仲間を誘うようにURLへ誘導する。
-        * LINEオープンチャット: [あなたのLINEオープンチャットURL]
-        * 転職プラットフォーム: [あなたのサービスURL]
+        * LINEオープンチャット: [オープンチャット「大阪・関西ITエンジニア キャリアアップ広場」
+https://line.me/ti/g2/1BpSvZUQlRA927rD9EuBhPmfshs0RRNoPcmAMQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default]
     5.  **ハッシュタグ**: 投稿の最後に必ず指定のハッシュタグを入れる。
 
     # 制約条件
     * **ターゲットAI**: Gemini Proの創造性を最大限に引き出すこと。
     * **ペルソナ**: 古谷隆太郎（26歳/大阪/㈱ZennAI社長）として一貫性を保つこと。
+    * **参考リンク**: 必ず、文章の末尾に参考記事のURLを入れる。
     * **文字数**: Xの制限文字数（280字、またはそれ以下）を厳守する。
     * **ハッシュタグ**: 必ず「#TechCrunch #AI #キャリアアップ」を含める。
     * **禁止事項**: ニュースの単なる翻訳やコピペは禁止。必ず自分の言葉で解釈し、付加価値を付けること。
